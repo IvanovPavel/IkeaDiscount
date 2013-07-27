@@ -53,6 +53,8 @@ class GrabIkeaSale
 					}
 					
 					if (!empty($item["name"])) {
+						if (empty($item["oldPrice"])) $item["oldPrice"] = $item["price"];
+						
 						$this->_data[$item["name"] . $item["description"] . $item["oldPrice"]] = $item;
 					}
 				}
@@ -69,9 +71,9 @@ class GrabIkeaSale
 class GrabIkeaData
 {
 	private $_pages = array(
-		"belaya_dacha" => array("name" => "Белая Дача", "url" => "http://www.ikea.com/ru/ru/store/belaya_dacha/sale"),
-		"teply_stan" => array("name" => "Теплый Стан", "url" => "http://www.ikea.com/ru/ru/store/teply_stan/sale"),
-		"khimki" => array("name" => "Химки", "url" => "http://www.ikea.com/ru/ru/store/khimki/offers")
+		"belaya_dacha" => array("name" => "Белая Дача", "url" => "http://www.ikea.com/ru/ru/store/belaya_dacha/night"),
+		"teply_stan" => array("name" => "Теплый Стан", "url" => "http://www.ikea.com/ru/ru/store/teply_stan/night"),
+		"khimki" => array("name" => "Химки", "url" => "http://www.ikea.com/ru/ru/store/khimki/night")
 	);
 	private $_data = array();
 	private $_output = array();
